@@ -14,8 +14,12 @@ async function getAdvice() {
     // use the new data object to set message string values
     adviceMessage =  data.slip.advice;
     idMessage = data.slip.id;
+    return data;
 }
 
+// to access the data object, you need to call the async function FIRST to wait for its return value 
+// THEN perform the callback function which takes the async return as a parameter
+getAdvice().then((data) => console.log(data))
 
 button.addEventListener('click', () => {
     textBody.setAttribute('style', 'opacity:0')
