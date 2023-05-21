@@ -3,6 +3,7 @@ const textBody = document.querySelector('.text-content');
 const idDisplay = document.querySelector('h3');
 const textDisplay = document.querySelector('h1');
 const button = document.querySelector('#btn');
+const loader = document.querySelector('.loader');
 
 let adviceMessage = '';
 let idMessage = '';
@@ -41,7 +42,8 @@ button.addEventListener('click', () => {
     dividerEl.setAttribute('style', 'opacity:0')
 
     setTimeout(() => {
-        containerEl.style.height = 0
+        containerEl.style.height = 0;
+        loader.setAttribute('style', 'opacity:1');
     },200)
 
     setTimeout(() => {
@@ -52,6 +54,7 @@ button.addEventListener('click', () => {
             textDisplay.textContent = adviceMessage;
         });
         setTimeout(() => {
+            loader.setAttribute('style', 'opacity:0')
             let newHeight = containerEl.scrollHeight;
             containerEl.addEventListener('transitionend', handleTransition)
             containerEl.style.height = `${newHeight}px`;
