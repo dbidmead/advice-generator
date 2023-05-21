@@ -25,8 +25,9 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
 }
 
 .container {
@@ -35,24 +36,36 @@ body {
     align-items: center;
     gap: 1.25rem;
     padding: 1.5rem;
-    padding-bottom: 3rem;
     background-color: var(--grey);
     width: 90%;
     min-width: 325px;
     max-width: 550px;
     border-radius: 15px;
     position: relative;
-    transition: all 0.1s ease;
+    transition: all 0.4s ease;
+    justify-content: space-evenly;
+    padding-bottom: 2.75rem;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    transition: all 0.2s ease;
 }
 
 h3 {
     color: var(--green);
     font-size: 14px;
     letter-spacing: 0.25em;
+    transition: all 0.2s ease;
 }
 
 h1 {
     text-align: center;
+    transition: all 0.2s ease;
 }
 
 button {
@@ -82,12 +95,18 @@ button:hover {
 
 #desktop-divider {
     display: none;
+    transition: all 0.2s ease;
+}
+
+#mobile-divider {
+    transition: all 0.2s ease;
 }
 
 .attribution { 
     font-size: 11px; 
     text-align: center; 
     width: 100%;
+    justify-self: flex-end;
     position: absolute;
     bottom: 0.5rem;
 }
@@ -105,5 +124,15 @@ button:hover {
 
     #desktop-divider {
         display: block;
+        position: absolute;
+        bottom: 2.5rem;
+    }
+
+    body {
+        justify-content: center;
+    }
+
+    .container {
+        padding-bottom: 4.5rem;
     }
 }
